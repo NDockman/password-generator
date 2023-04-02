@@ -6,15 +6,13 @@ var generateBtn = document.querySelector("#generate");
 var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numberArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-//are the " and \ characters correct?
 var specialCharArr = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-console.log(specialCharArr);
+
 
 
 function generatePassword() {
-  var tempPassword = [1, 2, 3];
+
   var passwordLength = chooseLength();
-  console.log(passwordLength);
 
   var finalPassword = [];
   var passwordCollection = [];
@@ -23,10 +21,6 @@ function generatePassword() {
   if (includeLowercase()) {
     passwordCollection = passwordCollection.concat(lowerCaseArr);
     console.log(passwordCollection);
-    // for (x = 0; x < tempPassword.length; x++) {
-    //    var randomLowerCaseLetter = Math.floor(Math.random() * lowerCaseArr.length);
-    //    tempPassword[x] = lowerCaseArr[randomLowerCaseLetter];
-    // }
   }
 
   if (includeUppercase()) {
@@ -53,12 +47,20 @@ function generatePassword() {
     finalPassword.push(passwordCollection[randomCharIndex]);
   }
 
-
   console.log(finalPassword);
+
+
+//change the password from an array to a string
+
+
+
+
   
-  return tempPassword;
+  return finalPassword;
 }
 
+
+//user must input a length >= 8 and <= 128
 function chooseLength() {
   var passwordLength = prompt("How many characters should the password be?", "Enter a number from 8 to 128");
   while (passwordLength < 8 || passwordLength > 128) {
@@ -102,8 +104,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
-
 
 
 
