@@ -20,41 +20,30 @@ function generatePassword() {
 
   if (includeLowercase()) {
     passwordCollection = passwordCollection.concat(lowerCaseArr);
-    console.log(passwordCollection);
   }
 
   if (includeUppercase()) {
     passwordCollection = passwordCollection.concat(upperCaseArr);
-    console.log(passwordCollection);
   }
 
   if (includeNum()) {
     passwordCollection = passwordCollection.concat(numberArr);
-    console.log(passwordCollection);
   }
 
   if (includeSpecialChar()) {
     passwordCollection = passwordCollection.concat(specialCharArr);
-    console.log(passwordCollection);
   }
   
-  console.log(passwordCollection);
-
-
 
   for (x = 0; x < passwordLength; x++) {
     var randomCharIndex = Math.floor(Math.random() * passwordCollection.length);
     finalPassword.push(passwordCollection[randomCharIndex]);
   }
 
-  console.log(finalPassword);
-
 
 //change the password from an array to a string
-
-
-
-
+  finalPassword = finalPassword.join("");
+  console.log(finalPassword);
   
   return finalPassword;
 }
@@ -69,10 +58,8 @@ function chooseLength() {
   return passwordLength;
 }
 
-
 /* The following 4 functions will use a confirm statement to check whether or not
     a certain character type should be applied */
-
 function includeLowercase() {
   var lowerCaseBoolean = confirm("Should the password contain a lowercase letter?");
   return lowerCaseBoolean;
@@ -104,7 +91,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
 
 
  
