@@ -18,20 +18,22 @@ function generatePassword() {
   var passwordCollection = [];
   
 
-  if (includeLowercase()) {
-    passwordCollection = passwordCollection.concat(lowerCaseArr);
-  }
+  while (passwordCollection[0] == undefined) {
+    if (includeLowercase()) {
+      passwordCollection = passwordCollection.concat(lowerCaseArr);
+    }
 
-  if (includeUppercase()) {
-    passwordCollection = passwordCollection.concat(upperCaseArr);
-  }
+    if (includeUppercase()) {
+      passwordCollection = passwordCollection.concat(upperCaseArr);
+    }
 
-  if (includeNum()) {
-    passwordCollection = passwordCollection.concat(numberArr);
-  }
+    if (includeNum()) {
+      passwordCollection = passwordCollection.concat(numberArr);
+    }
 
-  if (includeSpecialChar()) {
-    passwordCollection = passwordCollection.concat(specialCharArr);
+    if (includeSpecialChar()) {
+      passwordCollection = passwordCollection.concat(specialCharArr);
+    }
   }
   
 
